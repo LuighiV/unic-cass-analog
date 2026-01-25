@@ -24,6 +24,7 @@ C {sg13g2_pr/rppd.sym} -90 0 1 1 {name=R1
 w=1e-6
 l=2e-6
 model=rppd
+body=iovss
 spiceprefix=X
 b=0
 m=1
@@ -31,12 +32,12 @@ m=1
 C {sg13g2_pr/dantenna.sym} 0 60 0 0 {name=D1
 model=dantenna
 l=3.1u
-w=0.78u
+w=0.64u
 spiceprefix=X
 }
 C {sg13g2_pr/dpantenna.sym} 0 -60 0 0 {name=D2
 model=dpantenna
-l=0.78u
+l=0.64u
 w=4.98u
 spiceprefix=X
 }

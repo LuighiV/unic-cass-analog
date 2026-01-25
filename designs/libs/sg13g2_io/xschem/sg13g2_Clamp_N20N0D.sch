@@ -583,8 +583,9 @@ C {devices/iopin.sym} 2280 -300 3 0 {name=pad lab=pad}
 C {devices/iopin.sym} 2630 -300 3 0 {name=iovdd lab=iovdd}
 C {sg13g2_pr/rppd.sym} 1490 90 0 0 {name=R1
 w=0.5e-6
-l=0.5e-6
+l=3.54e-6
 model=rppd
+body=iovss
 spiceprefix=X
 b=0
 m=1

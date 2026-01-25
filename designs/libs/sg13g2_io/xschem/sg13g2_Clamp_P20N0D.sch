@@ -1048,6 +1048,7 @@ C {sg13g2_pr/rppd.sym} 1700 -350 0 0 {name=R1
 w=0.5e-6
 l=12.9e-6
 model=rppd
+body=iovdd
 spiceprefix=X
 b=0
 m=1

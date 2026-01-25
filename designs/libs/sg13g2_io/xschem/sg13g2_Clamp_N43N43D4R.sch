@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -2421,7 +2420,7 @@ C {devices/iopin.sym} 280 390 0 0 {name=iovss lab=iovss}
 C {devices/iopin.sym} -1380 -340 2 0 {name=gate lab=gate}
 C {sg13g2_pr/dantenna.sym} 170 370 3 0 {name=D1
 model=dantenna
-l=0.64u
+l=0.48u
 w=0.48u
 spiceprefix=X
 }
