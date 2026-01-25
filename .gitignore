@@ -64,3 +64,4 @@ dkms.conf
 **/extfiles
 run_lvs.tcl
 **/simulations
+**/drc_run_*
