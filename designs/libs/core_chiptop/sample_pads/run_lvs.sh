@@ -35,9 +35,7 @@ rm -rf extfiles
 magic -dnull -noconsole -rcfile $PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc << EOF
 gds flatglob *pmos*
 gds flatglob *nmos*
-gds flatglob *rppd*
 gds flatglob *Filler*
-gds flatglob *RCClampResistor*
 gds read $CIRCUIT_NAME
 load $CIRCUIT_NAME
 select top cell
@@ -62,8 +60,8 @@ set pdklib \${PDK_ROOT}/\${PDK}
 set techlibs \${pdklib}/libs.tech
 set reflibs \${pdklib}/libs.ref
 
-set setupfile \${techlibs}/netgen/${PDK}_setup.tcl
-#set setupfile ${SCRIPT_DIR}/${PDK}_setup.tcl
+#set setupfile \${techlibs}/netgen/${PDK}_setup.tcl
+set setupfile ${SCRIPT_DIR}/${PDK}_setup.tcl
 #set sclib \${reflibs}/sg13g2_io/spice/sg13g2_io.spi
 set sclib \${reflibs}/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 

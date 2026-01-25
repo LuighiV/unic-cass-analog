@@ -1,14 +1,14 @@
 ** sch_path: /home/designer/designs/libs/core_chiptop/sample_pads/sample_pads.sch
-.subckt sample_pads iovdd iovss padres pad
-*.PININFO iovdd:B iovss:B padres:B pad:B
-x1 iovdd iovss vss vdd sg13g2_IOPadVSS
-x2 iovdd iovss vss vdd sg13g2_IOPadVdd
-x3 iovdd iovss padres vss vdd pad sg13g2_IOPadAnalog
+.subckt sample_pads vdd vss padres pad
+*.PININFO vdd:B vss:B padres:B pad:B
+x1 iovdd vss vss vdd sg13g2_IOPadVSS
+x2 iovdd vss vss vdd sg13g2_IOPadVdd
+x3 iovdd vss padres vss vdd pad sg13g2_IOPadAnalog
 .ends
 
 * expanding   symbol:  sg13g2_IOPadVSS.sym # of pins=4
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadVSS.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadVSS.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_IOPadVSS.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_IOPadVSS.sch
 .subckt sg13g2_IOPadVSS iovdd iovss vss vdd
 *.PININFO iovss:B iovdd:B vss:B vdd:B
 x1 vss iovss iovdd sg13g2_DCNDiode
@@ -18,8 +18,8 @@ x2 iovdd vss iovss sg13g2_DCPDiode
 
 
 * expanding   symbol:  sg13g2_IOPadVdd.sym # of pins=4
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadVdd.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadVdd.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_IOPadVdd.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_IOPadVdd.sch
 .subckt sg13g2_IOPadVdd iovdd iovss vss vdd
 *.PININFO vdd:B iovdd:B vss:B iovss:B
 x6 vdd net2 sg13g2_RCClampResistor
@@ -29,21 +29,22 @@ x1 vdd iovdd net1 iovss sg13g2_Clamp_N43N43D4R
 
 
 * expanding   symbol:  sg13g2_IOPadAnalog.sym # of pins=6
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_IOPadAnalog.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_IOPadAnalog.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_IOPadAnalog.sch
 .subckt sg13g2_IOPadAnalog iovdd iovss padres vss vdd pad
 *.PININFO padres:B iovss:B iovdd:B pad:B vdd:B vss:B
-x3 pad iovss iovdd sg13g2_DCNDiode
+x3 pad iovss net1 sg13g2_DCNDiode
 x4 iovdd pad iovss sg13g2_DCPDiode
 x1 pad iovdd iovss sg13g2_Clamp_N20N0D
 x2 iovdd pad iovss sg13g2_Clamp_P20N0D
 x5 iovdd pad padres iovss sg13g2_SecondaryProtection
+* noconn #net1
 .ends
 
 
 * expanding   symbol:  sg13g2_DCNDiode.sym # of pins=3
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_DCNDiode.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_DCNDiode.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_DCNDiode.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_DCNDiode.sch
 .subckt sg13g2_DCNDiode cathode anode guard
 *.PININFO cathode:B anode:B guard:B
 XD1 anode cathode dantenna l=1.26u w=27.78u
@@ -53,8 +54,8 @@ XD2 anode cathode dantenna l=1.26u w=27.78u
 
 
 * expanding   symbol:  sg13g2_DCPDiode.sym # of pins=3
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_DCPDiode.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_DCPDiode.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_DCPDiode.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_DCPDiode.sch
 .subckt sg13g2_DCPDiode cathode anode guard
 *.PININFO cathode:B anode:B guard:B
 XD1 anode cathode dpantenna l=1.26u w=27.78u
@@ -64,42 +65,42 @@ XD2 anode cathode dpantenna l=1.26u w=27.78u
 
 
 * expanding   symbol:  sg13g2_RCClampResistor.sym # of pins=2
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_RCClampResistor.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_RCClampResistor.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_RCClampResistor.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_RCClampResistor.sch
 .subckt sg13g2_RCClampResistor pin2 pin1
 *.PININFO pin1:B pin2:B
-XR1 pin1 a1 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR2 a2 a1 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR3 a2 a3 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR4 a4 a3 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR5 a8 a7 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR6 a6 a7 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR7 a6 a5 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR8 a4 a5 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR9 a8 a9 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR10 a10 a9 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR11 a10 a11 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR12 a12 a11 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR13 a16 a15 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR14 a14 a15 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR15 a14 a13 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR16 a12 a13 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR17 a16 a17 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR18 a18 a17 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR19 a18 a19 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR20 a20 a19 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR21 a24 a23 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR22 a22 a23 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR23 a22 a21 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR24 a20 a21 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR25 a24 a25 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR26 pin2 a25 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR1 pin1 net1 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR2 net1 net2 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR3 net2 net3 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR4 net3 net4 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR5 net8 net7 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR6 net7 net6 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR7 net6 net5 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR8 net5 net4 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR9 net8 net9 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR10 net9 net10 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR11 net10 net11 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR12 net11 net12 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR13 net16 net15 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR14 net15 net14 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR15 net14 net13 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR16 net13 net12 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR17 net16 net17 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR18 net17 net18 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR19 net18 net19 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR20 net19 net20 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR21 net24 net23 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR22 net23 net22 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR23 net22 net21 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR24 net21 net20 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR25 net24 net25 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR26 net25 pin2 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
 .ends
 
 
 * expanding   symbol:  sg13g2_RCClampInverter.sym # of pins=4
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_RCClampInverter.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_RCClampInverter.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_RCClampInverter.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_RCClampInverter.sch
 .subckt sg13g2_RCClampInverter supply out in ground
 *.PININFO supply:B ground:B out:O in:I
 XM1 ground in ground ground sg13_hv_nmos w=9.0u l=9.5u ng=1 m=1
@@ -182,8 +183,8 @@ XM76 out in supply supply sg13_hv_pmos w=7.0u l=0.5u ng=1 m=1
 
 
 * expanding   symbol:  sg13g2_Clamp_N43N43D4R.sym # of pins=4
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_Clamp_N43N43D4R.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_Clamp_N43N43D4R.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_Clamp_N43N43D4R.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_Clamp_N43N43D4R.sch
 .subckt sg13g2_Clamp_N43N43D4R pad iovdd gate iovss
 *.PININFO pad:B iovss:B gate:B iovdd:B
 XM1 iovss gate pad iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
@@ -358,13 +359,13 @@ XM169 iovss gate pad iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
 XM170 iovss gate pad iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
 XM171 iovss gate pad iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
 XM172 iovss gate pad iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
-XD1 iovss gate dantenna l=0.64u w=0.48u
+XD1 iovss gate dantenna l=0.48u w=0.48u
 .ends
 
 
 * expanding   symbol:  sg13g2_Clamp_N20N0D.sym # of pins=3
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_Clamp_N20N0D.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_Clamp_N20N0D.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_Clamp_N20N0D.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_Clamp_N20N0D.sch
 .subckt sg13g2_Clamp_N20N0D pad iovdd iovss
 *.PININFO iovss:B pad:B iovdd:B
 XM1 iovss net1 pad iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
@@ -387,13 +388,13 @@ XM17 pad net1 iovss iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
 XM18 iovss net1 pad iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
 XM19 pad net1 iovss iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
 XM20 iovss net1 pad iovss sg13_hv_nmos w=4.4u l=0.6u ng=1 m=1
-XR1 iovss net1 sub! rppd w=0.5e-6 l=0.5e-6 m=1 b=0
+XR1 iovss net1 iovss rppd w=0.5e-6 l=3.54e-6 m=1 b=0
 .ends
 
 
 * expanding   symbol:  sg13g2_Clamp_P20N0D.sym # of pins=3
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_Clamp_P20N0D.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_Clamp_P20N0D.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_Clamp_P20N0D.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_Clamp_P20N0D.sch
 .subckt sg13g2_Clamp_P20N0D iovdd pad iovss
 *.PININFO iovdd:B pad:B iovss:B
 XM1 pad net1 iovdd iovdd sg13_hv_pmos w=6.66u l=0.6u ng=1 m=1
@@ -436,17 +437,17 @@ XM37 pad net1 iovdd iovdd sg13_hv_pmos w=6.66u l=0.6u ng=1 m=1
 XM38 iovdd net1 pad iovdd sg13_hv_pmos w=6.66u l=0.6u ng=1 m=1
 XM39 pad net1 iovdd iovdd sg13_hv_pmos w=6.66u l=0.6u ng=1 m=1
 XM40 iovdd net1 pad iovdd sg13_hv_pmos w=6.66u l=0.6u ng=1 m=1
-XR1 net1 iovdd sub! rppd w=0.5e-6 l=12.9e-6 m=1 b=0
+XR1 net1 iovdd iovdd rppd w=0.5e-6 l=12.9e-6 m=1 b=0
 .ends
 
 
 * expanding   symbol:  sg13g2_SecondaryProtection.sym # of pins=4
-** sym_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_SecondaryProtection.sym
-** sch_path: /home/designer/designs/libs/IHP-Open-PDK/ihp-sg13g2/libs.ref/sg13g2_io/xschem/sg13g2_SecondaryProtection.sch
+** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_SecondaryProtection.sym
+** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_SecondaryProtection.sch
 .subckt sg13g2_SecondaryProtection iovdd pad core iovss
 *.PININFO iovdd:B iovss:B core:B pad:B
-XR1 pad core sub! rppd w=1e-6 l=2e-6 m=1 b=0
-XD1 iovss core dantenna l=3.1u w=0.78u
-XD2 core iovdd dpantenna l=0.78u w=4.98u
+XR1 pad core iovss rppd w=1e-6 l=2e-6 m=1 b=0
+XD1 iovss core dantenna l=3.1u w=0.64u
+XD2 core iovdd dpantenna l=0.64u w=4.98u
 .ends
 
