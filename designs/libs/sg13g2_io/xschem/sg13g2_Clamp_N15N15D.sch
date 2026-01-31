@@ -416,3 +416,9 @@ C {devices/iopin.sym} 210 -340 1 0 {name=iovss lab=iovss}
 C {devices/iopin.sym} -400 -620 2 0 {name=gate lab=gate}
 C {devices/iopin.sym} 130 -810 3 0 {name=pad lab=pad}
 C {devices/iopin.sym} 340 -810 3 0 {name=iovdd lab=iovdd}
+C {sg13g2_pr/dantenna.sym} 140 -440 0 0 {name=DGATE
+model=dantenna
+l=0.78u
+w=0.78u
+spiceprefix=X
+}

@@ -32,7 +32,7 @@ N 2860 -500 3240 -500 {
 lab=pad}
 N 2860 -530 2860 -500 {
 lab=pad}
-N 3280 -600 3280 -330 {
+N 3280 -410 3280 -330 {
 lab=iovdd}
 N 3090 -600 3280 -600 {
 lab=iovdd}
@@ -86,8 +86,10 @@ N 3340 -200 3340 -170 {
 lab=vss}
 N 3380 -390 3390 -390 {
 lab=pad}
-N 3240 -410 3250 -410 {lab=#net1}
 N 3240 -290 3390 -290 {lab=iovss}
+N 3240 -410 3280 -410 {lab=iovdd}
+N 3280 -600 3280 -410 {
+lab=iovdd}
 C {sg13g2_DCNDiode.sym} 3090 -430 0 0 {name=x3}
 C {sg13g2_DCPDiode.sym} 3090 -310 0 0 {name=x4}
 C {sg13g2_Clamp_N20N0D.sym} 2660 -530 0 0 {name=x1}
@@ -99,4 +101,3 @@ C {devices/iopin.sym} 3350 -530 3 0 {name=pad lab=pad}
 C {devices/iopin.sym} 3220 -670 3 0 {name=vdd lab=vdd}
 C {devices/iopin.sym} 3340 -170 1 0 {name=vss lab=vss}
 C {sg13g2_SecondaryProtection.sym} 3540 -390 0 0 {name=x5}
-C {noconn.sym} 3250 -410 0 1 {name=l1}

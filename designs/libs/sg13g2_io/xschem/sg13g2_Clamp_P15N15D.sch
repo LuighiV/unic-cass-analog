@@ -786,3 +786,9 @@ C {devices/iopin.sym} 1460 -570 1 0 {name=pad lab=pad}
 C {devices/iopin.sym} 60 -830 2 0 {name=gate lab=gate}
 C {devices/iopin.sym} 1460 -1040 3 0 {name=iovdd lab=iovdd}
 C {devices/iopin.sym} 1680 -560 1 0 {name=iovss lab=iovss}
+C {sg13g2_pr/dpantenna.sym} 140 -940 0 0 {name=D1
+model=dpantenna
+l=0.78u
+w=0.78u
+spiceprefix=X
+}
