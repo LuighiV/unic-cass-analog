@@ -1,3 +1,6 @@
 [submodule "designs/libs/IHP-Open-PDK"]
 	path = designs/libs/IHP-Open-PDK
 	url = git@github.com:KrzysztofHerman/IHP-Open-PDK.git
+[submodule "designs/unic-cass-wrapper"]
+	path = designs/unic-cass-wrapper
+	url = git@github.com:unic-cass/unic-cass-wrapper.git
