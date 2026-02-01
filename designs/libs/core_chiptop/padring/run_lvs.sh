@@ -33,10 +33,6 @@ rm -rf extfiles
 # Extract layout for LVS from magic
 #-------------------------------------------
 magic -dnull -noconsole -rcfile $PDK_ROOT/$PDK/libs.tech/magic/$PDK.magicrc << EOF
-gds flatglob *pmos*
-gds flatglob *nmos*
-gds flatglob *Filler*
-gds flatglob *bondpad*
 gds flatglob sg13g2_RCClampResistor
 gds read $CIRCUIT_NAME
 load $CIRCUIT_NAME
@@ -44,7 +40,7 @@ readspice ${CIRCUIT_NAME}_pins.spice
 select top cell
 extract path extfiles
 extract no all
-extract unique notopports
+extract unique
 extract all
 ext2spice lvs
 ext2spice merge conservative

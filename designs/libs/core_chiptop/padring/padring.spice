@@ -75,7 +75,7 @@ Xsg13g2_IOPad_io_reset IOVDD VSS io_reset_p2c VSS VDD io_reset_PAD sg13g2_IOPadI
 ** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_IOPadVdd.sch
 .subckt sg13g2_IOPadVdd iovdd iovss vss vdd
 *.PININFO vdd:B iovdd:B vss:B iovss:B
-x6 vdd net2 sg13g2_RCClampResistor
+x6 vdd net2 vss sg13g2_RCClampResistor
 x1 vdd net1 net2 vss sg13g2_RCClampInverter
 x1 vdd iovdd net1 iovss sg13g2_Clamp_N43N43D4R
 .ends
@@ -109,7 +109,7 @@ x3 vdd iovdd p2c pad iovss vss sg13g2_LevelDown
 .subckt sg13g2_IOPadIOVdd iovdd iovss vss vdd
 *.PININFO iovss:B iovdd:B vss:B vdd:B
 x1 iovdd iovdd net1 iovss sg13g2_Clamp_N43N43D4R
-x1 net2 iovdd sg13g2_RCClampResistor
+x1 net2 iovdd vss sg13g2_RCClampResistor
 x2 iovdd net1 net2 iovss sg13g2_RCClampInverter
 .ends
 
@@ -152,37 +152,38 @@ x10 vdd iovdd net2 net1 c2p vss sg13g2_GateLevelUpInv
 .ends
 
 
-* expanding   symbol:  sg13g2_RCClampResistor.sym # of pins=2
+* expanding   symbol:  sg13g2_RCClampResistor.sym # of pins=3
 ** sym_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_RCClampResistor.sym
 ** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_RCClampResistor.sch
-.subckt sg13g2_RCClampResistor pin2 pin1
-*.PININFO pin1:B pin2:B
-XR1 pin1 net1 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR2 net1 net2 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR3 net2 net3 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR4 net3 net4 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR5 net8 net7 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR6 net7 net6 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR7 net6 net5 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR8 net5 net4 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR9 net8 net9 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR10 net9 net10 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR11 net10 net11 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR12 net11 net12 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR13 net16 net15 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR14 net15 net14 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR15 net14 net13 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR16 net13 net12 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR17 net16 net17 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR18 net17 net18 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR19 net18 net19 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR20 net19 net20 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR21 net24 net23 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR22 net23 net22 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR23 net22 net21 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR24 net21 net20 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR25 net24 net25 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
-XR26 net25 pin2 sub! rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+.subckt sg13g2_RCClampResistor pin2 pin1 sub
+*.PININFO pin1:B pin2:B sub:B
+XR1 pin1 net1 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR2 net1 net2 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR3 net2 net3 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR4 net3 net4 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR5 net7 net8 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR6 net6 net7 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR7 net5 net6 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR8 net4 net5 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR9 net8 net9 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR10 net9 net10 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR11 net10 net11 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR12 net11 net12 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR13 net15 net16 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR14 net14 net15 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR15 net13 net14 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR16 net12 net13 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR17 net16 net17 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR18 net17 net18 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR19 net18 net19 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR20 net19 net20 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR21 net23 net24 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR22 net22 net23 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR23 net21 net22 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR24 net20 net21 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR25 net24 net25 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+XR26 net25 pin2 sub rppd w=1.0e-6 l=20.0e-6 m=1 b=0
+* noconn sub
 .ends
 
 

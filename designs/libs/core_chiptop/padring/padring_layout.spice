@@ -201,7 +201,7 @@ Xsg13g2_DCNDiode_0 sg13g2_DCNDiode_0/guard vss vss vss sg13g2_DCNDiode
 Xsg13g2_DCPDiode_0 vss iovdd vss vss sg13g2_DCPDiode
 .ends
 
-.subckt sg13g2_IOPadVdd vdd iovdd iovss vss iovdd_uq0 w_n124_1076#
+.subckt sg13g2_IOPadVdd vdd iovdd iovss iovdd_uq0 w_n124_1076# vss
 Xsg13g2_Clamp_N43N43D4R_0 vss sg13g2_RCClampInverter_0/out vdd vdd vdd vdd vdd vdd
 + vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd w_n124_1076# sg13g2_Clamp_N43N43D4R
 Xsg13g2_RCClampInverter_0 vss vdd sg13g2_RCClampInverter_0/out sg13g2_RCClampInverter_0/in
@@ -234,121 +234,88 @@ X24 a_8065_11542# a_7735_7456# vss rppd l=20u w=1u
 X25 a_6745_11542# a_6415_7456# vss rppd l=20u w=1u
 .ends
 
-.subckt padring VDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub ui_PAD[0] uo_PAD[0]
-+ uo_CORE2PAD[0] ui_CORE2PAD[0] ui_PAD[1] uo_PAD[1] ui_CORE2PAD[1] uo_CORE2PAD[1]
-+ ui_PAD[2] uo_CORE2PAD[2] ui_CORE2PAD[2] uo_PAD[2] uo_CORE2PAD[3] uo_PAD[3] ui_CORE2PAD[3]
-+ ui_PAD[3] ui_CORE2PAD[4] uo_PAD[4] uo_CORE2PAD[4] ui_PAD[4] ui_CORE2PAD[5] ui_PAD[5]
-+ uo_CORE2PAD[5] uo_PAD[5] uo_CORE2PAD[6] ui_CORE2PAD[6] ui_PAD[6] uo_PAD[6] uo_PAD[7]
-+ ui_PAD[7] uo_CORE2PAD[7] ui_CORE2PAD[7] uo_CORE2PAD[8] uo_PAD[8] ui_CORE2PAD[8]
-+ ui_PAD[8] uo_PAD[9] ui_CORE2PAD[9] ui_PAD[9] uo_CORE2PAD[9] uo_CORE2PAD[10] ui_CORE2PAD[10]
-+ ui_PAD[10] uo_PAD[10] ui_PAD[11] uo_PAD[11] ui_CORE2PAD[11] uo_CORE2PAD[11] ui_PAD[12]
-+ uo_PAD[12] ui_CORE2PAD[12] uo_CORE2PAD[12] uo_PAD[13] ui_CORE2PAD[13] ui_PAD[13]
-+ uo_CORE2PAD[13] uo_PAD[14] ui_CORE2PAD[14] ui_PAD[14] uo_CORE2PAD[14] ui_PAD[15]
-+ uo_PAD[15] ui_CORE2PAD[15] uo_CORE2PAD[15] io_clock_p2c io_clock_PAD io_reset_p2c
-+ io_reset_PAD analog_io_0_padres analog_io_0 analog_io_1_padres analog_io_1 IOVDD
-Xsg13g2_IOPadOut30mA_10 uo_CORE2PAD[5] uo_PAD[5] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIn_5 ui_CORE2PAD[1] ui_PAD[1] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_10 ui_CORE2PAD[9] ui_PAD[9] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_11 ui_CORE2PAD[8] ui_PAD[8] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadOut30mA_11 uo_CORE2PAD[6] uo_PAD[6] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadOut30mA_12 uo_CORE2PAD[7] uo_PAD[7] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIn_6 ui_CORE2PAD[0] ui_PAD[0] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadAnalog_0 analog_io_0 analog_io_0_padres sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadAnalog
-Xsg13g2_IOPadAnalog_1 analog_io_1 analog_io_1_padres sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadAnalog
-Xsg13g2_IOPadOut30mA_13 uo_CORE2PAD[8] uo_PAD[8] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIn_12 ui_CORE2PAD[7] ui_PAD[7] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_7 ui_CORE2PAD[10] ui_PAD[10] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadOut30mA_14 uo_CORE2PAD[13] uo_PAD[13] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIn_13 ui_CORE2PAD[5] ui_PAD[5] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_8 ui_CORE2PAD[11] ui_PAD[11] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_15 io_reset_p2c io_reset_PAD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_14 ui_CORE2PAD[6] ui_PAD[6] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadOut30mA_15 uo_CORE2PAD[4] uo_PAD[4] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIn_9 ui_CORE2PAD[12] ui_PAD[12] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_16 ui_CORE2PAD[4] ui_PAD[4] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadOut30mA_0 uo_CORE2PAD[3] uo_PAD[3] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIOVss_0 sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub VDD IOVDD IOVDD
-+ sg13g2_IOPadIOVss
-Xsg13g2_IOPadIn_17 ui_CORE2PAD[13] ui_PAD[13] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIOVss_1 sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub VDD IOVDD IOVDD
-+ sg13g2_IOPadIOVss
-Xsg13g2_IOPadOut30mA_1 uo_CORE2PAD[1] uo_PAD[1] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadOut30mA_2 uo_CORE2PAD[2] uo_PAD[2] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIOVss_2 sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub VDD IOVDD IOVDD
-+ sg13g2_IOPadIOVss
-Xsg13g2_IOPadIOVss_3 sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub VDD IOVDD IOVDD
-+ sg13g2_IOPadIOVss
-Xsg13g2_IOPadOut30mA_3 uo_CORE2PAD[0] uo_PAD[0] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIOVdd_0 IOVDD VDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadIOVdd
-Xsg13g2_IOPadOut30mA_4 uo_CORE2PAD[9] uo_PAD[9] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIOVdd_1 IOVDD VDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadIOVdd
-Xsg13g2_IOPadIOVdd_2 IOVDD VDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadIOVdd
-Xsg13g2_IOPadOut30mA_5 uo_CORE2PAD[12] uo_PAD[12] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadOut30mA_6 uo_CORE2PAD[11] uo_PAD[11] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadIOVdd_3 IOVDD VDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadIOVdd
-Xsg13g2_IOPadOut30mA_7 uo_CORE2PAD[10] uo_PAD[10] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadOut30mA_8 uo_CORE2PAD[15] uo_PAD[15] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadOut30mA_9 uo_CORE2PAD[14] uo_PAD[14] VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD IOVDD sg13g2_IOPadOut30mA
-Xsg13g2_IOPadVss_0 VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD
-+ sg13g2_IOPadVss
-Xsg13g2_IOPadVss_1 VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD
-+ sg13g2_IOPadVss
-Xsg13g2_IOPadVss_2 VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD
-+ sg13g2_IOPadVss
-Xsg13g2_IOPadVss_3 VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub IOVDD
-+ sg13g2_IOPadVss
-Xsg13g2_IOPadVdd_0 VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD IOVDD sg13g2_IOPadVdd
-Xsg13g2_IOPadVdd_1 VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD IOVDD sg13g2_IOPadVdd
-Xsg13g2_IOPadVdd_2 VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD IOVDD sg13g2_IOPadVdd
-Xsg13g2_IOPadVdd_3 VDD IOVDD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD IOVDD sg13g2_IOPadVdd
-Xsg13g2_IOPadIn_0 ui_CORE2PAD[14] ui_PAD[14] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_1 ui_CORE2PAD[15] ui_PAD[15] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_3 ui_CORE2PAD[3] ui_PAD[3] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_2 io_clock_p2c io_clock_PAD sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
-Xsg13g2_IOPadIn_4 ui_CORE2PAD[2] ui_PAD[2] sg13g2_IOPadOut30mA_9/sg13g2_GateLevelUpInv_0/sub
-+ IOVDD VDD IOVDD sg13g2_IOPadIn
+.subckt padring VDD ui_PAD[0] uo_PAD[0] uo_CORE2PAD[0] ui_CORE2PAD[0] ui_PAD[1] uo_PAD[1]
++ ui_CORE2PAD[1] uo_CORE2PAD[1] ui_PAD[2] uo_CORE2PAD[2] ui_CORE2PAD[2] uo_PAD[2]
++ uo_CORE2PAD[3] uo_PAD[3] ui_CORE2PAD[3] ui_PAD[3] ui_CORE2PAD[4] uo_PAD[4] uo_CORE2PAD[4]
++ ui_PAD[4] ui_CORE2PAD[5] ui_PAD[5] uo_CORE2PAD[5] uo_PAD[5] uo_CORE2PAD[6] ui_CORE2PAD[6]
++ ui_PAD[6] uo_PAD[6] uo_PAD[7] ui_PAD[7] uo_CORE2PAD[7] ui_CORE2PAD[7] uo_CORE2PAD[8]
++ uo_PAD[8] ui_CORE2PAD[8] ui_PAD[8] uo_PAD[9] ui_CORE2PAD[9] ui_PAD[9] uo_CORE2PAD[9]
++ uo_CORE2PAD[10] ui_CORE2PAD[10] ui_PAD[10] uo_PAD[10] ui_PAD[11] uo_PAD[11] ui_CORE2PAD[11]
++ uo_CORE2PAD[11] ui_PAD[12] uo_PAD[12] ui_CORE2PAD[12] uo_CORE2PAD[12] uo_PAD[13]
++ ui_CORE2PAD[13] ui_PAD[13] uo_CORE2PAD[13] uo_PAD[14] ui_CORE2PAD[14] ui_PAD[14]
++ uo_CORE2PAD[14] ui_PAD[15] uo_PAD[15] ui_CORE2PAD[15] uo_CORE2PAD[15] io_clock_p2c
++ io_clock_PAD io_reset_p2c io_reset_PAD analog_io_0_padres analog_io_0 analog_io_1_padres
++ analog_io_1 IOVDD bondpad_70x70_9/sub
+Xsg13g2_IOPadOut30mA_10 uo_CORE2PAD[5] uo_PAD[5] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIn_10 ui_CORE2PAD[9] ui_PAD[9] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_5 ui_CORE2PAD[1] ui_PAD[1] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadOut30mA_11 uo_CORE2PAD[6] uo_PAD[6] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIn_11 ui_CORE2PAD[8] ui_PAD[8] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadAnalog_0 analog_io_0 analog_io_0_padres bondpad_70x70_9/sub IOVDD VDD
++ bondpad_70x70_9/sub IOVDD IOVDD sg13g2_IOPadAnalog
+Xsg13g2_IOPadIn_6 ui_CORE2PAD[0] ui_PAD[0] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadOut30mA_12 uo_CORE2PAD[7] uo_PAD[7] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadAnalog_1 analog_io_1 analog_io_1_padres bondpad_70x70_9/sub IOVDD VDD
++ bondpad_70x70_9/sub IOVDD IOVDD sg13g2_IOPadAnalog
+Xsg13g2_IOPadIn_12 ui_CORE2PAD[7] ui_PAD[7] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_7 ui_CORE2PAD[10] ui_PAD[10] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadOut30mA_13 uo_CORE2PAD[8] uo_PAD[8] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIn_13 ui_CORE2PAD[5] ui_PAD[5] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_8 ui_CORE2PAD[11] ui_PAD[11] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadOut30mA_14 uo_CORE2PAD[13] uo_PAD[13] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIn_14 ui_CORE2PAD[6] ui_PAD[6] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_9 ui_CORE2PAD[12] ui_PAD[12] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadOut30mA_15 uo_CORE2PAD[4] uo_PAD[4] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIn_15 io_reset_p2c io_reset_PAD bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_16 ui_CORE2PAD[4] ui_PAD[4] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadOut30mA_0 uo_CORE2PAD[3] uo_PAD[3] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIOVss_0 bondpad_70x70_9/sub VDD IOVDD IOVDD sg13g2_IOPadIOVss
+Xsg13g2_IOPadIn_17 ui_CORE2PAD[13] ui_PAD[13] bondpad_70x70_9/sub IOVDD VDD IOVDD
++ sg13g2_IOPadIn
+Xsg13g2_IOPadIOVss_1 bondpad_70x70_9/sub VDD IOVDD IOVDD sg13g2_IOPadIOVss
+Xsg13g2_IOPadOut30mA_1 uo_CORE2PAD[1] uo_PAD[1] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadOut30mA_2 uo_CORE2PAD[2] uo_PAD[2] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIOVss_2 bondpad_70x70_9/sub VDD IOVDD IOVDD sg13g2_IOPadIOVss
+Xsg13g2_IOPadIOVdd_0 IOVDD VDD bondpad_70x70_9/sub bondpad_70x70_9/sub sg13g2_IOPadIOVdd
+Xsg13g2_IOPadIOVss_3 bondpad_70x70_9/sub VDD IOVDD IOVDD sg13g2_IOPadIOVss
+Xsg13g2_IOPadOut30mA_3 uo_CORE2PAD[0] uo_PAD[0] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIOVdd_1 IOVDD VDD bondpad_70x70_9/sub bondpad_70x70_9/sub sg13g2_IOPadIOVdd
+Xsg13g2_IOPadOut30mA_4 uo_CORE2PAD[9] uo_PAD[9] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIOVdd_2 IOVDD VDD bondpad_70x70_9/sub bondpad_70x70_9/sub sg13g2_IOPadIOVdd
+Xsg13g2_IOPadOut30mA_5 uo_CORE2PAD[12] uo_PAD[12] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadIOVdd_3 IOVDD VDD bondpad_70x70_9/sub bondpad_70x70_9/sub sg13g2_IOPadIOVdd
+Xsg13g2_IOPadOut30mA_6 uo_CORE2PAD[11] uo_PAD[11] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadOut30mA_7 uo_CORE2PAD[10] uo_PAD[10] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadOut30mA_8 uo_CORE2PAD[15] uo_PAD[15] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadOut30mA_9 uo_CORE2PAD[14] uo_PAD[14] VDD IOVDD bondpad_70x70_9/sub bondpad_70x70_9/sub
++ IOVDD IOVDD sg13g2_IOPadOut30mA
+Xsg13g2_IOPadVss_0 VDD IOVDD bondpad_70x70_9/sub IOVDD sg13g2_IOPadVss
+Xsg13g2_IOPadVss_1 VDD IOVDD bondpad_70x70_9/sub IOVDD sg13g2_IOPadVss
+Xsg13g2_IOPadVss_2 VDD IOVDD bondpad_70x70_9/sub IOVDD sg13g2_IOPadVss
+Xsg13g2_IOPadVdd_0 VDD IOVDD bondpad_70x70_9/sub IOVDD IOVDD bondpad_70x70_9/sub sg13g2_IOPadVdd
+Xsg13g2_IOPadVss_3 VDD IOVDD bondpad_70x70_9/sub IOVDD sg13g2_IOPadVss
+Xsg13g2_IOPadVdd_1 VDD IOVDD bondpad_70x70_9/sub IOVDD IOVDD bondpad_70x70_9/sub sg13g2_IOPadVdd
+Xsg13g2_IOPadVdd_2 VDD IOVDD bondpad_70x70_9/sub IOVDD IOVDD bondpad_70x70_9/sub sg13g2_IOPadVdd
+Xsg13g2_IOPadVdd_3 VDD IOVDD bondpad_70x70_9/sub IOVDD IOVDD bondpad_70x70_9/sub sg13g2_IOPadVdd
+Xsg13g2_IOPadIn_0 ui_CORE2PAD[14] ui_PAD[14] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_1 ui_CORE2PAD[15] ui_PAD[15] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_2 io_clock_p2c io_clock_PAD bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_3 ui_CORE2PAD[3] ui_PAD[3] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
+Xsg13g2_IOPadIn_4 ui_CORE2PAD[2] ui_PAD[2] bondpad_70x70_9/sub IOVDD VDD IOVDD sg13g2_IOPadIn
 .ends
 
