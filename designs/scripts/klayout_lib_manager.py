@@ -24,7 +24,7 @@ def load_libraries(libs):
         lib.register(name)
 
 def reload_libraries():
-    root_dir = "/foss/designs/libs"
+    root_dir = "~/designs/libs"
     libs = find_gds_files(root_dir)
     # Load libraries directly from gds_files
     load_libraries(libs)
