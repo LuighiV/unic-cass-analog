@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -37,14 +36,15 @@ N 1610 -50 1910 -50 {
 lab=iovss}
 N 1990 -320 1990 -290 {
 lab=vdd}
-N 2030 0 2030 30 {
-lab=vss}
 N 2180 -260 2180 -170 {
 lab=#net2}
 N 1450 -260 2180 -260 {
 lab=#net2}
 N 1450 -260 1450 -150 {
 lab=#net2}
+N 2330 -120 2330 -50 {lab=vss}
+N 2030 -50 2030 30 {lab=vss}
+N 2030 -50 2330 -50 {lab=vss}
 C {sg13g2_Clamp_N43N43D4R.sym} 1960 -150 0 0 {}
 C {sg13g2_RCClampResistor.sym} 2330 -160 0 1 {name=x1}
 C {sg13g2_RCClampInverter.sym} 1600 -150 0 0 {name=x2}

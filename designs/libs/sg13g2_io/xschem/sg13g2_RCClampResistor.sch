@@ -1,5 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -60,7 +59,7 @@ lab=#net24}
 N 310 -360 310 -320 {
 lab=#net25}
 N 310 -460 310 -420 {
-lab=xxx}
+lab=pin2}
 C {sg13g2_pr/rppd.sym} -690 -300 0 0 {name=R1
 w=1.0e-6
 l=20.0e-6
@@ -68,7 +67,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -690 -410 0 0 {name=R2
 w=1.0e-6
 l=20.0e-6
@@ -76,7 +75,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -690 -520 0 0 {name=R3
 w=1.0e-6
 l=20.0e-6
@@ -84,7 +83,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -690 -630 0 0 {name=R4
 w=1.0e-6
 l=20.0e-6
@@ -92,39 +91,39 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} -510 -300 0 0 {name=R5
+body=sub}
+C {sg13g2_pr/rppd.sym} -510 -300 2 0 {name=R5
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} -510 -410 0 0 {name=R6
+body=sub}
+C {sg13g2_pr/rppd.sym} -510 -410 2 0 {name=R6
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} -510 -520 0 0 {name=R7
+body=sub}
+C {sg13g2_pr/rppd.sym} -510 -520 2 0 {name=R7
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} -510 -630 0 0 {name=R8
+body=sub}
+C {sg13g2_pr/rppd.sym} -510 -630 2 0 {name=R8
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -330 -300 0 0 {name=R9
 w=1.0e-6
 l=20.0e-6
@@ -132,7 +131,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -330 -410 0 0 {name=R10
 w=1.0e-6
 l=20.0e-6
@@ -140,7 +139,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -330 -520 0 0 {name=R11
 w=1.0e-6
 l=20.0e-6
@@ -148,7 +147,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -330 -630 0 0 {name=R12
 w=1.0e-6
 l=20.0e-6
@@ -156,39 +155,39 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} -180 -300 0 0 {name=R13
+body=sub}
+C {sg13g2_pr/rppd.sym} -180 -300 2 0 {name=R13
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} -180 -410 0 0 {name=R14
+body=sub}
+C {sg13g2_pr/rppd.sym} -180 -410 2 0 {name=R14
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} -180 -520 0 0 {name=R15
+body=sub}
+C {sg13g2_pr/rppd.sym} -180 -520 2 0 {name=R15
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} -180 -630 0 0 {name=R16
+body=sub}
+C {sg13g2_pr/rppd.sym} -180 -630 2 0 {name=R16
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -20 -300 0 0 {name=R17
 w=1.0e-6
 l=20.0e-6
@@ -196,7 +195,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -20 -410 0 0 {name=R18
 w=1.0e-6
 l=20.0e-6
@@ -204,7 +203,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -20 -520 0 0 {name=R19
 w=1.0e-6
 l=20.0e-6
@@ -212,7 +211,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} -20 -630 0 0 {name=R20
 w=1.0e-6
 l=20.0e-6
@@ -220,39 +219,39 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} 150 -290 0 0 {name=R21
+body=sub}
+C {sg13g2_pr/rppd.sym} 150 -290 2 0 {name=R21
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} 150 -400 0 0 {name=R22
+body=sub}
+C {sg13g2_pr/rppd.sym} 150 -400 2 0 {name=R22
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} 150 -510 0 0 {name=R23
+body=sub}
+C {sg13g2_pr/rppd.sym} 150 -510 2 0 {name=R23
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {sg13g2_pr/rppd.sym} 150 -620 0 0 {name=R24
+body=sub}
+C {sg13g2_pr/rppd.sym} 150 -620 2 0 {name=R24
 w=1.0e-6
 l=20.0e-6
 model=rppd
 spiceprefix=X
 b=0
 m=1
-}
+body=sub}
 C {sg13g2_pr/rppd.sym} 310 -290 0 0 {name=R25
 w=1.0e-6
 l=20.0e-6
@@ -260,6 +259,7 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
+body=sub
 }
 C {sg13g2_pr/rppd.sym} 310 -390 0 0 {name=R26
 w=1.0e-6
@@ -268,6 +268,9 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
+body=sub
 }
 C {devices/iopin.sym} -690 -220 0 0 {name=pin1 lab=pin1}
 C {devices/iopin.sym} 310 -460 0 0 {name=pin2 lab=pin2}
+C {iopin.sym} -540 -210 2 0 {name=p1 lab=sub}
+C {noconn.sym} -540 -210 2 0 {name=l1}
