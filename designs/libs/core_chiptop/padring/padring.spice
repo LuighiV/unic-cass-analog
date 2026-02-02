@@ -75,7 +75,7 @@ Xsg13g2_IOPad_io_reset IOVDD VSS io_reset_p2c VSS VDD io_reset_PAD sg13g2_IOPadI
 ** sch_path: /home/designer/designs/libs/sg13g2_io/xschem/sg13g2_IOPadVdd.sch
 .subckt sg13g2_IOPadVdd iovdd iovss vss vdd
 *.PININFO vdd:B iovdd:B vss:B iovss:B
-x6 vdd net2 vss sg13g2_RCClampResistor
+x6 net2 vdd vss sg13g2_RCClampResistor
 x1 vdd net1 net2 vss sg13g2_RCClampInverter
 x1 vdd iovdd net1 iovss sg13g2_Clamp_N43N43D4R
 .ends
